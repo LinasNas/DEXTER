@@ -4,7 +4,7 @@ Repository for the paper "Rethinking Out-of-Distribution Detection for Reinforce
 
 The appendix of the paper can be found in the root directory of the repository as ```appendix.pdf```.
 
-# 0. Setup
+# Setup
 The code is structured so that most of the experiments could be run on both CPUs and GPUs (DEXTER and CPDs also tend to run faster on CPUs). However, experiments on continuous action space environments -- namely Reacher -- use Mujoco, so running the code on GPUs is recommended in these cases.
 
 When using CPUs, the main steps are as follows:
@@ -158,6 +158,9 @@ Similarly, below you can find the relevant arguments that should be used in each
 | ARNS Reacher  | MJReacher-v0 | "state"    | Medium      | 0.15           | ../assets/rollouts/IMANSReacher-v0/env_noise_corr_0p0_0p0_noise_strength_0p15/50_ep/ep_data.pkl                                                      | ../assets/policies/IMANSReacher-v0/env_noise_corr_0p0_0p0_noise_strength_0p15/best_model.zip_jit.pt                                                          |
 | ARNS Reacher  | MJReacher-v0 | "state"    | Strong      | 0.17           | ../assets/rollouts/IMANSReacher-v0/env_noise_corr_0p0_0p0_noise_strength_0p17/50_ep/ep_data.pkl                                                      | ../assets/policies/IMANSReacher-v0/env_noise_corr_0p0_0p0_noise_strength_0p17/best_model.zip_jit.pt                                                          |
 
+
+# 2. Evaluate OOD detectors on CUSUM scripts
+In the ```CUSUM``` directory, you can also find the script ```evalute_results.py```, which implements the decision rule for when to classify a test-time deployment as OOD that is described in the paper.
 
 # Notes 
 To maximize compatability with methodology from previous work, environments with continuous action spaces are constructed with ```gym``` and using ```mujoco```, while environments with discrete action spaces use ```gymnasium```. 
