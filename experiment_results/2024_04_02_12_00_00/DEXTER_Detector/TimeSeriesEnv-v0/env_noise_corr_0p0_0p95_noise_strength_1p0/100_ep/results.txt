@@ -1,0 +1,12 @@
+Detector: DEXTER_Detector
+train_env: TimeSeriesEnv-v0
+test_env: TimeSeriesEnv-v0
+num train episodes: 1
+num test episodes: 100
+train_env_noise_corr: (0.0, 0.0)
+train_noise_strength: 1.0
+test_env_noise_corr: (0.0, 0.95)
+test_noise_strength: 1.0
+
+reward: 200.0
+auroc: 0.83
